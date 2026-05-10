@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="529" height="568" viewBox="0 0 529 568" fill="none">
+  <defs>
+    <linearGradient id="gl" x1="50%" y1="0%" x2="50%" y2="55%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <rect width="529" height="318" fill="url(#gl)" />
+</svg>
