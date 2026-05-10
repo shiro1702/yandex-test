@@ -20,7 +20,7 @@ html {
 
 @media (max-width: 770px) {
   html {
-    font-size: calc(100vw * 14 / 375);
+    font-size: calc(100vw * 16 / 375);
   }
 }
 
@@ -54,6 +54,7 @@ dd {
 }
 
 .ticker {
+  overflow: hidden;
   background: var(--color-accent-red);
   white-space: nowrap;
 }
@@ -405,20 +406,26 @@ dd {
 .stages__plane {
   display: block;
   width: min(100%, 20.9375rem);
-  margin: 9.25rem auto -5rem;
+  margin: 0 auto -3.5625rem;
   position: relative;
   z-index: 2;
 }
 
-.stages__slider {
-  background: #d7ccc0; /* из Figma: карточки на бумаге (нет в токенах) */
+.stages__group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  height: 20.9375rem;
   padding: 3.875rem 1.25rem 2.125rem;
+  overflow-y: auto;
+  background: #d7ccc0; /* из Figma: карточки на бумаге (нет в токенах) */
 }
 
 .stages__card {
   display: flex;
   gap: 1rem;
-  min-height: 10.875rem;
+  min-height: 1.75rem;
+  /* min-height: 10.875rem; */
 }
 
 .stages__number {
@@ -764,18 +771,22 @@ dd {
     gap: 1.25rem;
   }
 
+  .stages__group {
+    display: contents;
+  }
+
   .stages__card {
     min-height: 7rem;
     background: #d7ccc0; /* из Figma: карточки на бумаге (нет в токенах) */
     padding: 1.25rem;
   }
 
-  .stages__card:nth-child(3) {
+  .stages__group:nth-child(2) .stages__card {
     grid-row: span 2;
     min-height: 15.25rem;
   }
 
-  .stages__card:nth-child(7) {
+  .stages__group:nth-child(5) .stages__card {
     grid-column: span 2;
   }
 
