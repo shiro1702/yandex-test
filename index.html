@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body class="page">
+
+    <main class="main">
+
     <div class="hero">
       <div class="hero__surface">
         <div class="hero__art" aria-hidden="true">
@@ -55,14 +58,14 @@
           <h1 class="hero__title">
             <span class="hero__title-line">Превратите уездный город</span>
             <span class="hero__title-line hero__title-line--right">в столицу</span>
-            <span class="hero__title-line hero__title-line--right">земного шара</span>
+            <span class="hero__title-line hero__title-line--right-2">земного шара</span>
           </h1>
           <p class="hero__lead">
             Оплатите взнос на&nbsp;телеграммы для&nbsp;организации Международного васюкинского турнира по&nbsp;шахматам
           </p>
           <div class="hero__actions">
-            <a class="hero__button hero__button--dark" href="#support">Поддержать шахматную мысль</a>
-            <a class="hero__button hero__button--light" href="#about">Подробнее о&nbsp;турнире</a>
+            <a class="hero__button hero__button--dark" href="#support">Поддержать<br>шахматную мысль</a>
+            <a class="hero__button hero__button--light" href="#about">Подробнее<br>о&nbsp;турнире</a>
           </div>
         </div>
       </div>
@@ -81,16 +84,18 @@
         <span class="ticker__item">Лёд тронулся, господа присяжные заседатели!</span>
       </div>
     </div>
-
-    <main class="main">
       <div class="content-wrapper">
       <section class="support" id="support">
         <article class="support__lecture lecture">
           <h2 class="lecture__title">
-            Чтобы&nbsp;поддержать Международный васюкинский турнир посетите лекцию на&nbsp;тему:
-            <span class="lecture__title-accent">«Плодотворная дебютная идея»</span>
+            <span>Чтобы&nbsp;поддержать</span> <span>Международный</span> <span>васюкинский</span> <span>турнир</span> <span class="lecture__title-desctop">посетите</span> <span class="lecture__title-desctop">лекцию</span> <span class="lecture__title-desctop">на&nbsp;тему:</span>
+                <span class="lecture__title-accent lecture__title-desctop">«Плодотворная дебютная идея»</span>
+            </span>
           </h2>
           <img class="lecture__stamp" src="/storage/lecture/image.png" alt="Марка турнира" loading="lazy" />
+          <span class="lecture__title lecture__title-mobile">посетите лекцию на&nbsp;тему:
+            <span class="lecture__title-accent">«Плодотворная дебютная идея»</span></span>
+          </span>
         </article>
 
         <article class="support__event event" id="about">
@@ -242,7 +247,7 @@
       <section class="participants">
         <div class="participants__head">
           <h2 class="participants__title">Участники турнира</h2>
-          <div class="participants__controls">
+          <div class="participants__controls participants__controls--desktop">
             <button class="participants__arrow participants__arrow--prev" type="button" aria-label="Предыдущий участник">
               <picture aria-hidden="true">
                 <source media="(min-width: 768px)" srcset="/storage/app/media/landing/carousel-btn-left-desktop.svg" />
@@ -298,6 +303,21 @@
             </article>
           </div>
         </div>
+
+        <div class="participants__controls participants__controls--mobile">
+          <button class="participants__arrow participants__arrow--prev" type="button" aria-label="Предыдущий участник">
+            <picture aria-hidden="true">
+              <source media="(min-width: 768px)" srcset="/storage/app/media/landing/carousel-btn-left-desktop.svg" />
+              <img src="/storage/app/media/landing/carousel-btn-left-mobile.svg" alt="" />
+            </picture>
+          </button>
+          <p class="participants__counter"><span class="participants__current">1</span><span class="participants__separator">/</span><span class="participants__total">6</span></p>
+          <button class="participants__arrow participants__arrow--next" type="button" aria-label="Следующий участник">
+            <picture aria-hidden="true">
+              <source media="(min-width: 768px)" srcset="/storage/app/media/landing/carousel-btn-right-desktop.svg" />
+              <img src="/storage/app/media/landing/carousel-btn-right-mobile.svg" alt="" />
+            </picture>
+          </button>
       </section>
       </div>
     </main>

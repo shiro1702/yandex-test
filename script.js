@@ -7,7 +7,7 @@ function updateStagesSwiper() {
     if (stagesSwiper) return;
     stagesSwiper = new Swiper("#stages-swiper", {
       slidesPerView: 1,
-      spaceBetween: 16,
+      spaceBetween: 20,
       speed: 450,
       navigation: {
         prevEl: ".stages__arrow--prev",
@@ -29,7 +29,7 @@ function updateStagesSwiper() {
 updateStagesSwiper();
 mqStagesMobile.addEventListener("change", updateStagesSwiper);
 
-const participantsCurrent = document.querySelector(".participants__current");
+const participantsCurrent = document.querySelectorAll(".participants__current");
 const participantsTotal = document.querySelector(".participants__total");
 const participantsSlides = document.querySelectorAll(".participants__card");
 
@@ -42,7 +42,7 @@ function updateParticipantsCounter(swiper) {
   const visible = getVisibleParticipants();
   const current = Math.min(total, swiper.activeIndex + visible);
   participantsTotal.textContent = String(total);
-  participantsCurrent.textContent = String(current);
+  participantsCurrent.forEach(item => item.textContent = String(current));
 }
 
 const participantsSwiper = new Swiper("#participants-swiper", {

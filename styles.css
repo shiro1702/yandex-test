@@ -51,6 +51,7 @@ dd {
   max-width: 85.375rem;
   margin: 0 auto;
   padding-inline: clamp(1.25rem, calc(0.0202rem + 5.247vw), 4.5rem);
+  overflow: hidden;
 }
 
 .ticker {
@@ -111,56 +112,60 @@ dd {
 }
 .hero {
   height: 43.75rem;
+  overflow: hidden;
 }
 .hero__circle {
   width: 46rem;
-  right: -6.5rem;
-  top: -6.5rem;
+  right: -8rem;
+  top: -8rem;
   z-index: 1;
 }
+
 .hero__chess-1 {
   width: 4.25rem;
-  right: 9.5rem;
-  bottom: 7.75rem;
+  right: 10.25rem;
+  bottom: 10rem;
   z-index: 3;
 }
+
 .hero__chess-2 {
   width: 4.875rem;
-  right: 1.75rem;
-  bottom: 7.25rem;
+  right: 2rem;
+  bottom: 9.25rem;
   z-index: 3;
 }
+
 .hero__chess-3 {
   width: 3.25rem;
-  right: 6rem;
-  bottom: -0.75rem;
+  left: 72%;
+  right: auto;
+  bottom: 2rem;
+  transform: translateX(-50%);
   z-index: 3;
 }
+
 .hero__chess-4 {
   width: 6.25rem;
-  right: -0.875rem;
-  bottom: -1.75rem;
+  right: -0.75rem;
+  bottom: 0.25rem;
   z-index: 3;
 }
 
 .hero__image {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: auto;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  inset: 0;
-  z-index: 2;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  object-position: bottom center;
+  z-index: 3;
 }
 
 .hero__chess {
   z-index: 3;
-}
-
-.hero__chess--3 {
-  clip-path: polygon(0 0, 28% 0, 35% 32%, 36% 100%, 0 100%);
-}
-
-.hero__chess--4 {
-  clip-path: polygon(67% 0, 100% 0, 100% 78%, 72% 100%, 67% 57%);
 }
 
 .hero__container {
@@ -181,8 +186,6 @@ dd {
   display: inline-flex;
   align-items: flex-end;
   gap: 0.15rem;
-  width: 5.5rem;
-  height: 2rem;
   justify-content: flex-start;
   margin-top: 0.125rem;
 }
@@ -257,10 +260,10 @@ dd {
 }
 
 .main {
-  padding-top: 3rem;
 }
 
 .support {
+  padding-top: 5rem;
   display: grid;
   gap: 2.125rem;
 }
@@ -272,6 +275,13 @@ dd {
   line-height: 1.35;
   text-transform: uppercase;
 }
+.lecture__title-desctop {
+  display: none;
+}
+.lecture__title-mobile {
+  display: inline-block;
+  margin-top: 1.5rem;
+}
 
 .lecture__title-accent,
 .event__title-accent {
@@ -281,8 +291,9 @@ dd {
 .lecture__stamp {
   display: block;
   margin-top: 1.5rem;
-  width: 11.125rem;
-  height: 2.25rem;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .event__player {
@@ -411,6 +422,9 @@ dd {
   z-index: 2;
 }
 
+.stages__slider {
+  overflow: visible;
+}
 .stages__group {
   display: flex;
   flex-direction: column;
@@ -462,6 +476,7 @@ dd {
 
 .stages__arrow,
 .participants__arrow {
+  flex-shrink: 0;
   width: 2.25rem;
   height: 2.25rem;
   border: 0;
@@ -488,18 +503,48 @@ dd {
 .stages__pagination {
   display: flex;
   gap: 0.375rem;
+  width: fit-content !important;
 }
 
 .stages__pagination .swiper-pagination-bullet {
   width: 0.625rem;
   height: 0.625rem;
-  margin: 0;
+  margin: 0 !important;
   opacity: 1;
   background: #d9d9d9; /* из Figma: #D9D9D9 (нет в токенах) */
 }
 
 .stages__pagination .swiper-pagination-bullet-active {
   background: var(--color-text);
+}
+
+.participants__counter {
+  margin: 0;
+  min-width: 2.75rem;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+.participants__controls--mobile {
+  display: none;
+}
+@media (max-width: 768px) {
+  .participants__controls--mobile {
+    display: flex;
+  }
+}
+.participants__controls--desktop {
+  display: flex;
+}
+@media (max-width: 768px) {
+  .participants__controls--desktop {
+    display: none;
+  }
+}
+.participants__separator,
+.participants__total {
+  opacity: 0.6;
 }
 
 .participants {
@@ -556,16 +601,6 @@ dd {
   text-decoration: none;
 }
 
-.participants__counter {
-  font-size: 1rem;
-  line-height: 1.2;
-}
-
-.participants__separator,
-.participants__total {
-  opacity: 0.6;
-}
-
 .footer {
   margin-top: 6.25rem;
   background: var(--color-bg-sand);
@@ -594,9 +629,9 @@ dd {
   }
 
   .hero__circle {
-    width: 52rem;
-    right: 7.5rem;
-    top: -11.5rem;
+    width: 48.5625rem;
+    right: -1.6rem;
+    top: -6.4rem;
   }
 
   .hero__container {
@@ -612,7 +647,11 @@ dd {
 
   .hero__title-line--right {
     text-align: left;
-    padding-left: 2.25rem;
+    padding-left: 6.25rem;
+  }
+  .hero__title-line--right-2 {
+    text-align: right;
+    padding-right: 0.25rem;
   }
 
   .hero__lead {
@@ -623,7 +662,7 @@ dd {
 
   .hero__actions {
     width: 33.875rem;
-    margin-top: 2.5rem;
+    margin-top: 2.4rem;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
   }
@@ -634,38 +673,33 @@ dd {
 
   .hero__chess-1 {
     width: 6.5rem;
-    right: 26.125rem;
-    bottom: 19.25rem;
+    right: 32.5rem;
+    bottom: 10.5rem;
+    transform: rotate(-5.99deg);
   }
 
   .hero__chess-2 {
     width: 7.125rem;
-    right: 10.625rem;
-    bottom: 17.375rem;
+    right: 11rem;
+    bottom: 17.2rem;
+    transform: rotate(7.59deg);
   }
 
   .hero__chess-3 {
     width: 5.1875rem;
-    right: 18.25rem;
-    bottom: -0.4375rem;
+    left: unset;
+    right: 0.2rem;
+    bottom: 01.2rem;
   }
 
   .hero__chess-4 {
     width: 9.75rem;
-    right: -1.4375rem;
-    bottom: -2.9375rem;
-  }
-
-  .hero__chess--3 {
-    clip-path: polygon(0 0, 28% 0, 34% 38%, 37% 100%, 0 100%);
-  }
-
-  .hero__chess--4 {
-    clip-path: polygon(64% 0, 100% 0, 100% 81%, 72% 100%, 68% 49%);
+    right: 22.1rem;
+    bottom: -2.5rem;
+    transform: rotate(-10.59deg);
   }
 
   .main {
-    padding-top: 5rem;
   }
 
   .support__lecture {
@@ -677,6 +711,12 @@ dd {
 
   .lecture__title {
     font-size: 2.25rem;
+  }
+  .lecture__title-desctop {
+    display: inline-block;
+  }
+  .lecture__title-mobile {
+    display: none;
   }
 
   .lecture__stamp {
