@@ -110,53 +110,55 @@ dd {
   pointer-events: none;
   user-select: none;
 }
+
 .hero {
-  height: 43.75rem;
+  height: 48.375rem;
   overflow: hidden;
 }
+
 .hero__circle {
   width: 46rem;
-  right: -8rem;
-  top: -8rem;
+  width: 21.9em;
+  height: 21.9em;
+  right: 1.3rem;
+  top: 24.1rem;
   z-index: 1;
 }
 
+
 .hero__chess-1 {
-  width: 4.25rem;
-  right: 10.25rem;
-  bottom: 10rem;
+  width: 2.965rem;
+  bottom: 7rem;
+  right: 16.2rem;
   z-index: 3;
+  transform: rotate(-5.99deg);
 }
 
 .hero__chess-2 {
-  width: 4.875rem;
-  right: 2rem;
-  bottom: 9.25rem;
+  width: 2.93625rem;
+  right: 5.8rem;
+  bottom: 10.5rem;
   z-index: 3;
+  transform: rotate(15deg);
 }
 
 .hero__chess-3 {
-  width: 3.25rem;
-  left: 72%;
-  right: auto;
-  bottom: 2rem;
-  transform: translateX(-50%);
-  z-index: 3;
+  display: none;
 }
 
 .hero__chess-4 {
-  width: 6.25rem;
-  right: -0.75rem;
-  bottom: 0.25rem;
+  width: 4.794375rem;
+  right: 8.8rem;
+  bottom: -0.8rem;
   z-index: 3;
+  transform: rotate(-10.59deg);
 }
 
 .hero__image {
-  left: 0;
-  right: 0;
-  bottom: 0;
+  right: -2.09rem;
+  bottom: 0.1rem;
   top: auto;
-  width: 100%;
+  width: 46.670625rem;
   height: auto;
   max-height: none;
   object-fit: contain;
@@ -171,8 +173,7 @@ dd {
 .hero__container {
   position: relative;
   z-index: 2;
-  max-width: 21rem;
-  padding-top: 1.125rem;
+  padding-top: 1.1rem;
 }
 
 .logo {
@@ -183,7 +184,7 @@ dd {
 }
 
 .logo__icon {
-  display: inline-flex;
+  display: flex;
   align-items: flex-end;
   gap: 0.15rem;
   justify-content: flex-start;
@@ -191,10 +192,14 @@ dd {
 }
 
 .logo__horse {
-  display: inline-block;
-  font-size: 1.15rem;
-  line-height: 1;
-  filter: grayscale(1) saturate(0.2) brightness(0.5);
+  width: 1.353125rem;
+  height: 1.94875rem;
+}
+
+.logo__svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .logo__text {
@@ -203,8 +208,26 @@ dd {
   font-weight: 700;
   letter-spacing: 0.015em;
   text-transform: uppercase;
-  color: #595653; /* из Figma: #595653 (нет в токенах) */
+  color: #595653;
+  /* из Figma: #595653 (нет в токенах) */
 }
+
+@media (max-width: 768px) {
+  .logo__icon {
+    gap: 0.09375rem;
+    margin-top: 0;
+  }
+
+  .logo__horse {
+    width: 1.171875rem;
+    height: 1.6875rem;
+  }
+
+  .logo__text {
+    letter-spacing: -0.06em;
+  }
+}
+
 
 .hero__title {
   margin-top: 2.5rem;
@@ -218,8 +241,19 @@ dd {
   display: block;
 }
 
+@media (max-width: 768px) {
+  .hero__title-line {
+    letter-spacing: 0.04rem;
+  }
+}
+
 .hero__title-line--right {
-  text-align: right;
+  padding-left: 4rem;
+}
+
+.hero__title-line--right-2 {
+  padding-left: 2rem;
+  letter-spacing: 0.01rem;
 }
 
 .hero__lead {
@@ -239,14 +273,25 @@ dd {
   place-items: center;
   min-height: 2.9375rem;
   border-radius: 4.125rem;
-  padding: 0.375rem 1rem;
+  /* padding: 0.375rem 1rem; */
   font-size: 1rem;
   line-height: 1.3;
   font-weight: 500;
   text-align: center;
   text-decoration: none;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
 }
+
+/* @media (max-width: 768px) {
+  .hero__button {
+
+    height: 2.2rem;
+  }
+  .hero__button--light {
+    border-width: 0.1rem;
+  }
+} */
 
 .hero__button--dark {
   background: var(--color-dark);
@@ -254,13 +299,13 @@ dd {
 }
 
 .hero__button--light {
-  background: rgba(255, 255, 255, 0.9); /* из Figma: полупрозрачный белый (нет в токенах) */
+  background: rgba(255, 255, 255, 0.9);
+  /* из Figma: полупрозрачный белый (нет в токенах) */
   border: 0.125rem solid var(--color-dark);
   color: var(--color-dark);
 }
 
-.main {
-}
+.main {}
 
 .support {
   padding-top: 5rem;
@@ -275,9 +320,11 @@ dd {
   line-height: 1.35;
   text-transform: uppercase;
 }
+
 .lecture__title-desctop {
   display: none;
 }
+
 .lecture__title-mobile {
   display: inline-block;
   margin-top: 1.5rem;
@@ -285,7 +332,8 @@ dd {
 
 .lecture__title-accent,
 .event__title-accent {
-  color: #f54932; /* из Figma: #F54932 (нет в токенах) */
+  color: #f54932;
+  /* из Figma: #F54932 (нет в токенах) */
 }
 
 .lecture__stamp {
@@ -313,6 +361,7 @@ dd {
   margin: 0 auto 1.5rem;
 
 }
+
 .event__image--burn {
   background: #ffffff;
   mix-blend-mode: color-burn;
@@ -325,6 +374,7 @@ dd {
   object-fit: cover;
   pointer-events: none;
 }
+
 .event__image-item--burst-small {
   width: clamp(10rem, 52%, 12.5rem);
   height: auto;
@@ -369,7 +419,8 @@ dd {
   display: grid;
   gap: 0.75rem;
   padding: 1rem 0;
-  border-bottom: 0.125rem solid #d0d0d0; /* из Figma: #D0D0D0 (нет в токенах) */
+  border-bottom: 0.125rem solid #d0d0d0;
+  /* из Figma: #D0D0D0 (нет в токенах) */
 }
 
 .event__key {
@@ -402,6 +453,7 @@ dd {
   line-height: 1.1;
   text-transform: uppercase;
 }
+
 .event__title-accent {
   color: var(--color-accent-red);
 }
@@ -425,6 +477,7 @@ dd {
 .stages__slider {
   overflow: visible;
 }
+
 .stages__group {
   display: flex;
   flex-direction: column;
@@ -432,7 +485,8 @@ dd {
   height: 20.9375rem;
   padding: 3.875rem 1.25rem 2.125rem;
   overflow-y: auto;
-  background: #d7ccc0; /* из Figma: карточки на бумаге (нет в токенах) */
+  background: #d7ccc0;
+  /* из Figma: карточки на бумаге (нет в токенах) */
 }
 
 .stages__card {
@@ -461,6 +515,7 @@ dd {
   font-weight: 500;
   line-clamp: 7;
 }
+
 .stages__text--last {
   max-width: none;
 }
@@ -511,7 +566,8 @@ dd {
   height: 0.625rem;
   margin: 0 !important;
   opacity: 1;
-  background: #d9d9d9; /* из Figma: #D9D9D9 (нет в токенах) */
+  background: #d9d9d9;
+  /* из Figma: #D9D9D9 (нет в токенах) */
 }
 
 .stages__pagination .swiper-pagination-bullet-active {
@@ -526,22 +582,27 @@ dd {
   line-height: 1.2;
   font-variant-numeric: tabular-nums;
 }
+
 .participants__controls--mobile {
   display: none;
 }
+
 @media (max-width: 768px) {
   .participants__controls--mobile {
     display: flex;
   }
 }
+
 .participants__controls--desktop {
   display: flex;
 }
+
 @media (max-width: 768px) {
   .participants__controls--desktop {
     display: none;
   }
 }
+
 .participants__separator,
 .participants__total {
   opacity: 0.6;
@@ -624,18 +685,23 @@ dd {
     font-size: 1.375rem;
   }
 
+  .hero {
+    height: 43.75rem;
+    overflow: hidden;
+  }
+
   .hero__surface {
     min-height: 43.75rem;
   }
 
   .hero__circle {
     width: 48.5625rem;
+    height: 48.5625rem;
     right: -1.6rem;
     top: -6.4rem;
   }
 
   .hero__container {
-    max-width: none;
     padding-top: 1.625rem;
   }
 
@@ -646,11 +712,10 @@ dd {
   }
 
   .hero__title-line--right {
-    text-align: left;
     padding-left: 6.25rem;
   }
+
   .hero__title-line--right-2 {
-    text-align: right;
     padding-right: 0.25rem;
   }
 
@@ -669,6 +734,21 @@ dd {
 
   .hero__button {
     min-height: 4.5rem;
+    white-space: wrap;
+    padding: 1.25rem 1rem;
+  }
+
+  .hero__image {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    object-position: bottom center;
+    z-index: 3;
   }
 
   .hero__chess-1 {
@@ -690,6 +770,8 @@ dd {
     left: unset;
     right: 0.2rem;
     bottom: 01.2rem;
+    transform: translateX(-50%);
+    z-index: 3;
   }
 
   .hero__chess-4 {
@@ -699,8 +781,7 @@ dd {
     transform: rotate(-10.59deg);
   }
 
-  .main {
-  }
+  .main {}
 
   .support__lecture {
     display: grid;
@@ -712,9 +793,11 @@ dd {
   .lecture__title {
     font-size: 2.25rem;
   }
+
   .lecture__title-desctop {
     display: inline-block;
   }
+
   .lecture__title-mobile {
     display: none;
   }
@@ -785,7 +868,7 @@ dd {
     text-transform: none;
     display: inline-block;
     margin: 0 0 0.625rem;
-    max-width: 17.5rem;   
+    max-width: 17.5rem;
   }
 
   .stages__plane {
@@ -795,6 +878,7 @@ dd {
     top: 22.5rem;
     margin: 0;
   }
+
   .stages__text--last {
     max-width: 25rem;
   }
@@ -817,7 +901,8 @@ dd {
 
   .stages__card {
     min-height: 7rem;
-    background: #d7ccc0; /* из Figma: карточки на бумаге (нет в токенах) */
+    background: #d7ccc0;
+    /* из Figma: карточки на бумаге (нет в токенах) */
     padding: 1.25rem;
   }
 
@@ -871,6 +956,7 @@ dd {
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-35%);
   }
