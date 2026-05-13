@@ -27,6 +27,7 @@
           <img class="hero__image" src="./storage/hero/image-city.png" alt="" />
           <img class="hero__chess hero__chess-3" src="./storage/hero/chess-3.png" alt="" />
           <img class="hero__chess hero__chess-4" src="./storage/hero/chess-4.png" alt="" />
+          <img class="burn-image-wrap" src="./storage/event/burn.png" alt="" loading="lazy" />
           <!-- <img class="hero__image" src="./storage/app/media/landing/hero-chess-desktop.svg" alt="" /> -->
           <!-- <img class="hero__chess hero__chess--3" src="./storage/app/media/landing/hero-chess-desktop.svg" alt="" />
           <img class="hero__chess hero__chess--4" src="./storage/app/media/landing/hero-chess-desktop.svg" alt="" /> -->
@@ -71,7 +72,7 @@
           </a>
           <h1 class="hero__title">
             <span class="hero__title-line">Превратите уездный город</span>
-            <span class="hero__title-line hero__title-line--right">в столицу</span>
+            <span class="hero__title-line hero__title-line--right">в&nbsp;столицу</span>
             <span class="hero__title-line hero__title-line--right-2">земного шара</span>
           </h1>
           <p class="hero__lead">
@@ -88,12 +89,12 @@
       <div class="ticker__track">
         <span class="ticker__item">Дело помощи утопающим — дело рук самих утопающих!</span>
         <span class="ticker__dot" aria-hidden="true"></span>
-        <span class="ticker__item">Шахматы двигают вперёд не только культуру, но и экономику!</span>
+        <span class="ticker__item">Шахматы двигают вперёд не&nbsp;только культуру, но и&nbsp;экономику!</span>
         <span class="ticker__dot" aria-hidden="true"></span>
         <span class="ticker__item">Лёд тронулся, господа присяжные заседатели!</span>
         <span class="ticker__item">Дело помощи утопающим — дело рук самих утопающих!</span>
         <span class="ticker__dot" aria-hidden="true"></span>
-        <span class="ticker__item">Шахматы двигают вперёд не только культуру, но и экономику!</span>
+        <span class="ticker__item">Шахматы двигают вперёд не&nbsp;только культуру, но и&nbsp;экономику!</span>
         <span class="ticker__dot" aria-hidden="true"></span>
         <span class="ticker__item">Лёд тронулся, господа присяжные заседатели!</span>
       </div>
@@ -108,18 +109,16 @@
             <span class="lecture__title-accent lecture__title-desctop">«Плодотворная дебютная идея»</span>
             </span>
           </h2>
-          <img class="lecture__stamp" src="/storage/lecture/image.png" alt="Марка турнира" loading="lazy" />
+          <div class="lecture__stamp">
+            <img class="lecture__image" src="/storage/lecture/image.png" alt="Марка турнира" loading="lazy" />
+            <img class="burn-image-wrap" src="./storage/event/burn.png" alt="" loading="lazy" />
+          </div>
           <span class="lecture__title lecture__title-mobile">посетите лекцию на&nbsp;тему:
             <span class="lecture__title-accent">«Плодотворная дебютная идея»</span></span>
           </span>
         </article>
 
         <article class="support__event event" id="about">
-          <picture class="event__player-wrap">
-            <source media="(min-width: 768px)" srcset="/storage/app/media/landing/support-player-desktop.svg" />
-            <img class="event__player" src="/storage/app/media/landing/support-player-mobile.svg"
-              alt="Игрок за шахматной доской" loading="lazy" />
-          </picture>
           <div class="event__image" aria-hidden="true">
             <!-- <img
               class="event__image-item event__image-item--burst-main"
@@ -153,7 +152,7 @@
             /> -->
             <img class="event__image-item event__image-item--base" src="./storage/event/base.png" alt=""
               loading="lazy" />
-            <img class="event__image-item event__image--burn" src="./storage/event/burn.png" alt="" loading="lazy" />
+            <img class="event__image-item burn-image-wrap" src="./storage/event/burn.png" alt="" loading="lazy" />
 
           </div>
           <h2 class="event__title">
@@ -173,13 +172,14 @@
               <dt class="event__key">Стоимость входных билетов:</dt>
               <dd class="event__value">20&nbsp;коп.</dd>
             </div>
-            <div class="event__row">
+            <div class="event__row event__row--line">
               <dt class="event__key">Плата за&nbsp;игру:</dt>
               <dd class="event__value">50&nbsp;коп.</dd>
             </div>
             <div class="event__row">
               <dt class="event__key">Взнос на&nbsp;телеграммы:</dt>
-              <dd class="event__value"><s>100&nbsp;руб.</s> 21&nbsp;руб. 16&nbsp;коп.</dd>
+              <dd class="event__value"><s>100&nbsp;руб.</s> <span class="event__shift">21&nbsp;руб. 16&nbsp;коп.</span>
+              </dd>
             </div>
           </dl>
           <p class="event__note">По&nbsp;всем вопросам обращаться в&nbsp;администрацию к&nbsp;К.&nbsp;Михельсону</p>
@@ -188,7 +188,10 @@
 
       <section class="stages">
         <div class="stages__head">
-          <h2 class="stages__title">Этапы преображения Васюков <span class="stages__subtitle">Будущие источники
+          <h2 class="stages__title">
+            <span>Этапы</span> <span>преображения</span> <span>Васюков</span>
+            <span class="stages__subtitle">
+              <span>Будущие</span> <span>источники</span>
               обогащения васюкинцев</span></h2>
         </div>
         <picture class="stages__plane-wrap" aria-hidden="true">
@@ -341,22 +344,22 @@
           </button>
       </section>
     </div>
-  </main>
-
-  <footer class="footer">
     <div class="footer__ticker ticker" aria-label="Новости турнира">
       <div class="ticker__track">
         <span class="ticker__item">Дело помощи утопающим — дело рук самих утопающих!</span>
         <span class="ticker__dot" aria-hidden="true"></span>
-        <span class="ticker__item">Шахматы двигают вперёд не только культуру, но и экономику!</span>
+        <span class="ticker__item">Шахматы двигают вперёд не&nbsp;только культуру, но и&nbsp;экономику!</span>
         <span class="ticker__dot" aria-hidden="true"></span>
         <span class="ticker__item">Лёд тронулся, господа присяжные заседатели!</span>
       </div>
     </div>
+  </main>
+  <footer class="footer">
     <div class="content-wrapper">
       <p class="footer__text">
-        Все персонажи, события и цитаты являются вымышленными и не принадлежат создателям сайта. С подробностями можно
-        познакомиться в главе XXXIV романа Ильи Ильфа и Евгения Петрова «Двенадцать стульев».
+        Все персонажи, события и&nbsp;цитаты являются вымышленными и&nbsp;не&nbsp;принадлежат создателям сайта.
+        С&nbsp;подробностями можно
+        познакомиться в&nbsp;главе&nbsp;XXXIV романа Ильи&nbsp;Ильфа и&nbsp;Евгения Петрова «Двенадцать стульев».
       </p>
     </div>
   </footer>
