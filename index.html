@@ -43,7 +43,7 @@
             <img class="hero__chess hero__chess-4" src="./storage/hero/chess-4.png" alt="" />
           </span>
         </div>
-        <div class="hero__container content-wrapper">
+        <div class="hero__container content-wrapper" data-reveal>
           <a class="hero__logo logo" href="#" aria-label="Клуб четырех коней">
             <span class="logo__icon" aria-hidden="true">
               <span class="logo__horse">
@@ -81,7 +81,7 @@
             </span>
             <span class="logo__text">Клуб<br />четырех коней</span>
           </a>
-          <h1 class="hero__title">
+          <h1 class="hero__title reveal-heading" data-reveal>
             <span class="hero__title-line">Превратите уездный город</span>
             <span class="hero__title-line hero__title-line--right">в&nbsp;столицу</span>
             <span class="hero__title-line hero__title-line--right-2">земного шара</span>
@@ -112,13 +112,12 @@
     </div>
     <div class="content-wrapper">
       <section class="support" id="support">
-        <article class="support__lecture lecture">
-          <h2 class="lecture__title">
+        <article class="support__lecture lecture" data-reveal>
+          <h2 class="lecture__title reveal-heading">
             <span>Чтобы&nbsp;поддержать</span> <span>Международный</span> <span>васюкинский</span> <span>турнир</span>
             <span class="lecture__title-desctop">посетите</span> <span class="lecture__title-desctop">лекцию</span>
             <span class="lecture__title-desctop">на&nbsp;тему:</span>
             <span class="lecture__title-accent lecture__title-desctop">«Плодотворная дебютная идея»</span>
-            </span>
           </h2>
           <div class="lecture__stamp">
             <img class="lecture__image" src="/storage/lecture/image.png" alt="Марка турнира" loading="lazy" />
@@ -126,47 +125,34 @@
           </div>
           <span class="lecture__title lecture__title-mobile">посетите лекцию на&nbsp;тему:
             <span class="lecture__title-accent">«Плодотворная дебютная идея»</span></span>
-          </span>
         </article>
 
-        <article class="support__event event" id="about">
+        <article class="support__event event" id="about" data-reveal>
           <div class="event__image" aria-hidden="true">
-            <!-- <img
-              class="event__image-item event__image-item--burst-main"
-              src="./storage/event/burst-main.svg"
-              alt=""
-              loading="lazy"
-            />
-            <img
-              class="event__image-item event__image-item--burst-small"
-              src="./storage/event/burst-small.svg"
-              alt=""
-              loading="lazy"
-            />
-            <img
-              class="event__image-item event__image-item--collage"
-              src="./storage/event/event-collage-fg.png"
-              alt=""
-              loading="lazy"
-            />
-            <img
-              class="event__image-item event__image-item--vignette"
-              src="./storage/event/event-vignette.svg"
-              alt=""
-              loading="lazy"
-            />
-            <img
-              class="event__image-item event__image-item--glare"
-              src="./storage/event/event-glare.svg"
-              alt=""
-              loading="lazy"
-            /> -->
-            <img class="event__image-item event__image-item--base" src="./storage/event/base.png" alt=""
+
+            <img class="event__image-collage event__image-item--paper"
+              src="./storage/event/Cooper Union Stamp Paper.png" alt="" loading="lazy" />
+
+            <img class="event__image-collage event__image-item--glare-1" src="./storage/event/Vector 95.svg" alt=""
               loading="lazy" />
+            <img class="event__image-collage event__image-item--glare-2" src="./storage/event/Vector 96.svg" alt=""
+              loading="lazy" />
+            <img class="event__image-collage event__image-item--hand" src="./storage/event/Group 7.png" alt=""
+              loading="lazy" />
+            <img class="event__image-collage event__image-item--person" src="./storage/event/Group 14.png" alt=""
+              loading="lazy" />
+            <img class="event__image-collage event__image-item--horse" src="./storage/event/chess-1.png" alt=""
+              loading="lazy" />
+            <img class="event__image-collage event__image-item--stamp"
+              src="./storage/event/10_000_рублей_СССР_1923_года 1.png" alt="" loading="lazy" />
+
+
+            <!-- <img class="event__image-item event__image-item--base" src="./storage/event/base.png" alt=""
+              loading="lazy" /> -->
             <img class="event__image-item burn-image-wrap" src="./storage/event/burn.png" alt="" loading="lazy" />
 
           </div>
-          <h2 class="event__title">
+          <h2 class="event__title reveal-heading">
             и&nbsp;Сеанс <span class="event__title-accent">одновременной игры в&nbsp;шахматы
               на&nbsp;160&nbsp;досках</span> гроссмейстера О.&nbsp;Бендера
           </h2>
@@ -198,8 +184,8 @@
         </article>
       </section>
 
-      <section class="stages">
-        <div class="stages__head">
+      <section class="stages" data-reveal>
+        <div class="stages__head reveal-heading">
           <h2 class="stages__title">
             <span>Этапы</span> <span>преображения</span> <span>Васюков</span>
             <span class="stages__subtitle">
@@ -297,8 +283,8 @@
         </div>
       </section>
 
-      <section class="participants">
-        <div class="participants__head">
+      <section class="participants" data-reveal>
+        <div class="participants__head reveal-heading">
           <h2 class="participants__title">Участники турнира</h2>
           <div class="participants__controls participants__controls--desktop">
             <button class="participants__arrow participants__arrow--prev" type="button"
@@ -378,6 +364,7 @@
               <img src="/storage/app/media/landing/carousel-btn-right-mobile.svg" alt="" />
             </picture>
           </button>
+        </div>
       </section>
     </div>
     <div class="footer__ticker ticker" aria-label="Новости турнира">
@@ -391,7 +378,7 @@
     </div>
   </main>
   <footer class="footer">
-    <div class="content-wrapper">
+    <div class="content-wrapper" data-reveal>
       <p class="footer__text">
         Все персонажи, события и&nbsp;цитаты являются вымышленными и&nbsp;не&nbsp;принадлежат создателям сайта.
         С&nbsp;подробностями можно

@@ -72,3 +72,53 @@ const participantsSwiper = new Swiper("#participants-swiper", {
 window.addEventListener("resize", () => {
   updateParticipantsCounter(participantsSwiper);
 });
+
+const mqRevealReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+function setRevealCascadeCardIndices() {
+  document.querySelectorAll("section.stages .stages__card").forEach((el, i) => {
+    el.style.setProperty("--reveal-card-index", String(i));
+  });
+  document.querySelectorAll("section.participants .participants__card").forEach((el, i) => {
+    el.style.setProperty("--reveal-card-index", String(i));
+  });
+}
+
+function initRevealOnScroll() {
+  const nodes = document.querySelectorAll("[data-reveal]");
+  if (!nodes.length) return;
+
+  setRevealCascadeCardIndices();
+
+  const reveal = (el) => {
+    el.classList.add("is-revealed");
+  };
+
+  if (mqRevealReducedMotion.matches) {
+    nodes.forEach(reveal);
+    return;
+  }
+
+  const onIntersect = (entries, obs) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      reveal(entry.target);
+      obs.unobserve(entry.target);
+    }
+  };
+
+  const observer = new IntersectionObserver(onIntersect, {
+    root: null,
+    rootMargin: "0px 0px -8% 0px",
+    threshold: 0.06,
+  });
+
+  nodes.forEach((node) => {
+    node.classList.add("reveal-initialized");
+    observer.observe(node);
+  });
+
+  onIntersect(observer.takeRecords(), observer);
+}
+
+initRevealOnScroll();
