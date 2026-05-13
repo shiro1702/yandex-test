@@ -853,6 +853,39 @@ section.participants[data-reveal].reveal-initialized.is-revealed .participants__
   z-index: 3;
 }
 
+@keyframes event-glare-sway {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes event-pivot-right {
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes event-float-y {
+  0%,
+  100% {
+    transform: translateY(20px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
 .event__image-item--person {
   width: 65%;
   left: 19.2%;
@@ -863,24 +896,32 @@ section.participants[data-reveal].reveal-initialized.is-revealed .participants__
   width: 56%;
   left: 41%;
   top: 40%;
+  transform-origin: 100% 50%;
+  animation: event-pivot-right 3.6s ease-in-out infinite;
 }
 
 .event__image-item--glare-1 {
   width: 103%;
   left: -2%;
   top: -20%;
+  transform-origin: center center;
+  animation: event-glare-sway 5s ease-in-out infinite;
 }
 
 .event__image-item--glare-2 {
   width: 48%;
   left: 2%;
   top: 27%;
+  transform-origin: center center;
+  animation: event-glare-sway 5.5s ease-in-out infinite reverse;
 }
 
 .event__image-item--horse {
   width: 31%;
   left: 16%;
   top: 33%;
+  transform-origin: 100% 50%;
+  animation: event-pivot-right 4s ease-in-out infinite;
 }
 
 .event__image-item--paper {
@@ -893,6 +934,7 @@ section.participants[data-reveal].reveal-initialized.is-revealed .participants__
   width: 24%;
   left: 72%;
   top: -20%;
+  animation: event-float-y 3.2s ease-in-out infinite;
 }
 
 .burn-image-wrap {
