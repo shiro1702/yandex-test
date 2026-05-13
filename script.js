@@ -40,7 +40,8 @@ function getVisibleParticipants() {
 function updateParticipantsCounter(swiper) {
   const total = participantsSlides.length;
   const visible = getVisibleParticipants();
-  const current = Math.min(total, swiper.activeIndex + visible);
+  const idx = typeof swiper.realIndex === "number" ? swiper.realIndex : swiper.activeIndex;
+  const current = Math.min(total, idx + visible);
   participantsTotal.textContent = String(total);
   participantsCurrent.forEach(item => item.textContent = String(current));
 }
@@ -49,6 +50,11 @@ const participantsSwiper = new Swiper("#participants-swiper", {
   slidesPerView: 1,
   spaceBetween: 24,
   speed: 450,
+  loop: true,
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false,
+  },
   navigation: {
     prevEl: ".participants__arrow--prev",
     nextEl: ".participants__arrow--next",
