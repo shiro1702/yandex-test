@@ -377,14 +377,14 @@ dd {
 }
 
 .burn-image-wrap {
-  /* background: #ffffff; */
-  mix-blend-mode: color-burn;
   position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   pointer-events: none;
-  z-index: 10;
+  z-index: 3;
+  mix-blend-mode: color-burn;
 }
 
 .event__image-item {
@@ -469,6 +469,11 @@ dd {
   font-weight: 600;
 }
 
+.event__value-old {
+  text-decoration: line-through;
+  text-decoration-color: var(--color-accent-red);
+}
+
 .event__note {
   margin-top: 1.5rem;
   font-size: 1.125rem;
@@ -518,6 +523,7 @@ dd {
 }
 
 .stages__group {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
@@ -528,7 +534,16 @@ dd {
   /* из Figma: карточки на бумаге (нет в токенах) */
 }
 
+.stages__burn-image--mibile {
+  display: block;
+}
+
+.stages__burn-image--desktop {
+  display: none;
+}
+
 .stages__card {
+  position: relative;
   display: flex;
   gap: 1rem;
   min-height: 1.75rem;
@@ -809,12 +824,12 @@ dd {
   }
 
   .hero__chess-3 {
+    display: block;
     width: 5.1875rem;
     left: unset;
     right: 0.2rem;
     bottom: 01.2rem;
     transform: translateX(-50%);
-    z-index: 3;
   }
 
   .hero__chess-4 {
@@ -982,6 +997,14 @@ dd {
 
   .stages__group:nth-child(5) .stages__card {
     grid-column: span 2;
+  }
+
+  .stages__burn-image--mibile {
+    display: none;
+  }
+
+  .stages__burn-image--desktop {
+    display: block;
   }
 
   .stages__controls {
